@@ -30,6 +30,8 @@ class keycodes_v5:
         "QK_RSFT": 0x1200,
         "QK_RALT": 0x1400,
         "QK_RGUI": 0x1800,
+        "QK_MACRO": 0x5F12,
+
 
         "ALL_T(kc)": 0x6f00,
         "C_S_T(kc)": 0x6300,
@@ -371,6 +373,10 @@ class keycodes_v5:
         "KC_WFAV": 186,
         "KC_BRIU": 189,
         "KC_BRID": 190,
+        "KC_CPNL": 0xBF,
+        "KC_ASST": 0xC0,
+        "KC_MCTL": 0xC1,
+        "KC_LPAD": 0xC2,
         "KC_MPRV": 172,
         "KC_MNXT": 171,
         "KC_MUTE": 168,
@@ -552,9 +558,23 @@ class keycodes_v5:
 
         "FN_MO13": 0x5F10,
         "FN_MO23": 0x5F11,
+        "FN_CAPSWORD": 0x7C73,
 
+        "UC(kc)": 0x8000,
+        "QK_UNICODE_MODE_NEXT": 0x7C30,
+        "QK_UNICODE_MODE_PREVIOUS": 0x7C31,
+        "QK_UNICODE_MODE_MACOS": 0x7C32,
+        "QK_UNICODE_MODE_LINUX": 0x7C33,
+        "QK_UNICODE_MODE_WINDOWS": 0x7C34,
+        "QK_UNICODE_MODE_BSD": 0x7C35,
+        "QK_UNICODE_MODE_WINCOMPOSE": 0x7C36,
+        "QK_UNICODE_MODE_EMACS": 0x7C37,
+        
+        "QK_REPEAT_KEY": 0x7C79,
+        "QK_ALT_REPEAT_KEY": 0x7C7A,
+        "QK_LEADER": 0x7c58,
+        
         "QK_KB": 0x5F80,
-        "QK_MACRO": 0x5F12,
     }
 
     masked = set()

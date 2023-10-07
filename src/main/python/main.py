@@ -24,6 +24,8 @@ from util import init_logger
 
 
 def show_exception_box(log_msg):
+    if "WPARAM" in log_msg:
+        return
     if QtWidgets.QApplication.instance() is not None:
         errorbox = QtWidgets.QMessageBox()
         errorbox.setText(log_msg)

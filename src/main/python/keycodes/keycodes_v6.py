@@ -372,6 +372,10 @@ class keycodes_v6:
         "KC_WFAV": 186,
         "KC_BRIU": 189,
         "KC_BRID": 190,
+        "KC_CPNL": 0xBF,
+        "KC_ASST": 0xC0,
+        "KC_MCTL": 0xC1,
+        "KC_LPAD": 0xC2,
         "KC_MPRV": 172,
         "KC_MNXT": 171,
         "KC_MUTE": 168,
@@ -550,9 +554,23 @@ class keycodes_v6:
         "MI_BENDU": 0x718F,
 
         "RESET": 0x7C00,
-
         "FN_MO13": 0x7C77,
         "FN_MO23": 0x7C78,
+        "FN_CAPSWORD": 0x7C73,
+
+        "UC(kc)": 0x8000,
+        "QK_UNICODE_MODE_NEXT": 0x7C30,
+        "QK_UNICODE_MODE_PREVIOUS": 0x7C31,
+        "QK_UNICODE_MODE_MACOS": 0x7C32,
+        "QK_UNICODE_MODE_LINUX": 0x7C33,
+        "QK_UNICODE_MODE_WINDOWS": 0x7C34,
+        "QK_UNICODE_MODE_BSD": 0x7C35,
+        "QK_UNICODE_MODE_WINCOMPOSE": 0x7C36,
+        "QK_UNICODE_MODE_EMACS": 0x7C37,
+        
+        "QK_REPEAT_KEY": 0x7C79,
+        "QK_ALT_REPEAT_KEY": 0x7C7A,
+        "QK_LEADER": 0x7c58,
 
         "QK_KB": 0x7E00,
     }

@@ -410,8 +410,24 @@ KEYCODES_MODIFIERS = [
     K("KC_RAPC", "RA\n)", "Right Alt when held, ) when tapped"),
     K("KC_SFTENT", "RS\nEnter", "Right Shift when held, Enter when tapped"),
 ]
-
 KEYCODES_QUANTUM = [
+    K("UC(kc)", "UC\n(c)", "Send Unicode code point `c`, up to `0x7FFF`", masked=True),
+  #  K("UM(i)", "UM\n(i)", "Send Unicode code point at index `i` in `unicode_map`", masked=True),
+   # K("UP(i, j)", "UP\n(i, j)", "Send Unicode code point at index `i`, or `j` if Shift/Caps is on", masked=True),
+    K("QK_UNICODE_MODE_NEXT", "UC\nNext", "Cycle through selected input modes", alias=["UC_NEXT"]),
+    K("QK_UNICODE_MODE_PREVIOUS", "UC\nPrev", "Cycle through selected input modes in reverse", alias=["UC_PREV"]),
+    K("QK_UNICODE_MODE_MACOS", "UC\nMac", "Switch to macOS input", alias=["UC_MAC"]),
+    K("QK_UNICODE_MODE_LINUX", "UC\nLinux", "Switch to Linux input", alias=["UC_LINX"]),
+    K("QK_UNICODE_MODE_WINDOWS", "UC\nWin", "Switch to Windows input", alias=["UC_WIN"]),
+    K("QK_UNICODE_MODE_BSD", "UC\nBSD", "Switch to BSD input (not implemented)", alias=["UC_BSD"]),
+    K("QK_UNICODE_MODE_WINCOMPOSE", "UC\nWinC", "Switch to Windows input using WinCompose", alias=["UC_WINC"]),
+    K("QK_UNICODE_MODE_EMACS", "UC\nEmac", "Switch to emacs (`C-x-8 RET`)", alias=["UC_EMAC"]),
+
+    K("QK_REPEAT_KEY", "Repeat\nKey", "Repeat the last pressed key", alias=["QK_REP"]),
+    K("QK_ALT_REPEAT_KEY", "Alt\nRepeat\nKey", "Perform alternate of the last key", alias=["QK_AREP"]),
+
+    K("QK_LEADER", "Leader", "Leader key", alias=["KC_LEAD"]),
+
     K("MAGIC_SWAP_CONTROL_CAPSLOCK", "Swap\nCtrl\nCaps", "Swap Caps Lock and Left Control", alias=["CL_SWAP"]),
     K("MAGIC_UNSWAP_CONTROL_CAPSLOCK", "Unswap\nCtrl\nCaps", "Unswap Caps Lock and Left Control", alias=["CL_NORM"]),
     K("MAGIC_CAPSLOCK_TO_CONTROL", "Caps\nto\nCtrl", "Treat Caps Lock as Control", alias=["CL_CTRL"]),
@@ -480,6 +496,7 @@ KEYCODES_QUANTUM = [
     K("CMB_ON", "Combo\nOn", "Turns on Combo feature"),
     K("CMB_OFF", "Combo\nOff", "Turns off Combo feature"),
     K("CMB_TOG", "Combo\nToggle", "Toggles Combo feature on and off"),
+    K("FN_CAPSWORD", "Caps\nWord\nToggle", "Toggles Caps Word on and off"),
 ]
 
 KEYCODES_BACKLIGHT = [
@@ -554,6 +571,11 @@ KEYCODES_MEDIA = [
     K("KC_WFAV", "Browser\nFav.", "Browser Favorites (Windows)", alias=["KC_WWW_FAVORITES"]),
     K("KC_BRIU", "Bright.\nUp", "Increase the brightness of screen (Laptop)", alias=["KC_BRIGHTNESS_UP"]),
     K("KC_BRID", "Bright.\nDown", "Decrease the brightness of screen (Laptop)", alias=["KC_BRIGHTNESS_DOWN"]),
+    
+    K("KC_CPNL", "Ctrl.\nPanel", "Open Control Panel (Windows)", alias=["KC_CONTROL_PANEL"]),
+    K("KC_ASST", "Asst.", "Launch Context-Aware Assistant (Windows)", alias=["KC_ASSISTANT"]),
+    K("KC_MCTL", "MCtrl", "Open Mission Control (macOS)", alias=["KC_MISSION_CONTROL"]),
+    K("KC_LPAD", "LPad", "Open Launchpad (macOS)", alias=["KC_LAUNCHPAD"]),
 
     K("KC_MPRV", "Media\nPrev", "Previous Track", alias=["KC_MEDIA_PREV_TRACK"]),
     K("KC_MNXT", "Media\nNext", "Next Track", alias=["KC_MEDIA_NEXT_TRACK"]),
@@ -589,6 +611,42 @@ KEYCODES_MEDIA = [
     K("KC_LNUM", "Locking\nNum", "Locking Num Lock", alias=["KC_LOCKING_NUM"]),
     K("KC_LSCR", "Locking\nScroll", "Locking Scroll Lock", alias=["KC_LOCKING_SCROLL"]),
 ]
+
+KEYCODES_JOYSTICK = [
+    K("JS_BUTTON0", "Joystick\nBtn 0", "Joystick Button 0"),
+    K("JS_BUTTON1", "Joystick\nBtn 1", "Joystick Button 1"),
+    K("JS_BUTTON2", "Joystick\nBtn 2", "Joystick Button 2"),
+    K("JS_BUTTON3", "Joystick\nBtn 3", "Joystick Button 3"),
+    K("JS_BUTTON4", "Joystick\nBtn 4", "Joystick Button 4"),
+    K("JS_BUTTON5", "Joystick\nBtn 5", "Joystick Button 5"),
+    K("JS_BUTTON6", "Joystick\nBtn 6", "Joystick Button 6"),
+    K("JS_BUTTON7", "Joystick\nBtn 7", "Joystick Button 7"),
+    K("JS_BUTTON8", "Joystick\nBtn 8", "Joystick Button 8"),
+    K("JS_BUTTON9", "Joystick\nBtn 9", "Joystick Button 9"),
+    K("JS_BUTTON10", "Joystick\nBtn 10", "Joystick Button 10"),
+    K("JS_BUTTON11", "Joystick\nBtn 11", "Joystick Button 11"),
+    K("JS_BUTTON12", "Joystick\nBtn 12", "Joystick Button 12"),
+    K("JS_BUTTON13", "Joystick\nBtn 13", "Joystick Button 13"),
+    K("JS_BUTTON14", "Joystick\nBtn 14", "Joystick Button 14"),
+    K("JS_BUTTON15", "Joystick\nBtn 15", "Joystick Button 15"),
+    K("JS_BUTTON16", "Joystick\nBtn 16", "Joystick Button 16"),
+    K("JS_BUTTON17", "Joystick\nBtn 17", "Joystick Button 17"),
+    K("JS_BUTTON18", "Joystick\nBtn 18", "Joystick Button 18"),
+    K("JS_BUTTON19", "Joystick\nBtn 19", "Joystick Button 19"),
+    K("JS_BUTTON20", "Joystick\nBtn 20", "Joystick Button 20"),
+    K("JS_BUTTON21", "Joystick\nBtn 21", "Joystick Button 21"),
+    K("JS_BUTTON22", "Joystick\nBtn 22", "Joystick Button 22"),
+    K("JS_BUTTON23", "Joystick\nBtn 23", "Joystick Button 23"),
+    K("JS_BUTTON24", "Joystick\nBtn 24", "Joystick Button 24"),
+    K("JS_BUTTON25", "Joystick\nBtn 25", "Joystick Button 25"),
+    K("JS_BUTTON26", "Joystick\nBtn 26", "Joystick Button 26"),
+    K("JS_BUTTON27", "Joystick\nBtn 27", "Joystick Button 27"),
+    K("JS_BUTTON28", "Joystick\nBtn 28", "Joystick Button 28"),
+    K("JS_BUTTON29", "Joystick\nBtn 29", "Joystick Button 29"),
+    K("JS_BUTTON30", "Joystick\nBtn 30", "Joystick Button 30"),
+    K("JS_BUTTON31", "Joystick\nBtn 31", "Joystick Button 31"),
+]
+
 
 KEYCODES_TAP_DANCE = []
 
@@ -811,6 +869,9 @@ def create_custom_user_keycodes(custom_keycodes):
             )
         )
 
+def create_joystick_keycodes(joystickEnabled):
+    if joystickEnabled:
+        KEYCODES_MEDIA.extend(KEYCODES_JOYSTICK)
 
 def create_midi_keycodes(midiSettingLevel):
     KEYCODES_MIDI.clear()
@@ -885,6 +946,8 @@ def recreate_keyboard_keycodes(keyboard):
         create_user_keycodes()
 
     create_midi_keycodes(keyboard.midi)
+    
+    create_joystick_keycodes(keyboard.joystick)
 
     recreate_keycodes()
 

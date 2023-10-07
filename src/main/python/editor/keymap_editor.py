@@ -87,7 +87,13 @@ class KeymapEditor(BasicEditor):
 
         # create new layer labels
         for x in range(self.keyboard.layers):
-            btn = SquareButton(str(x))
+            lbl = str(x)
+            if self.keyboard.layer_alias != None:
+                if lbl in self.keyboard.layer_alias:
+                    lbl = str(x)+": "+self.keyboard.layer_alias[lbl]
+            btn = SquareButton(lbl)
+            width = btn.fontMetrics().boundingRect(lbl).width() + 18
+            btn.setMinimumWidth(width)
             btn.setFocusPolicy(Qt.NoFocus)
             btn.setRelSize(1.667)
             btn.setCheckable(True)

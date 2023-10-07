@@ -52,8 +52,10 @@ class Keyboard(ProtocolMacro, ProtocolDynamic, ProtocolTapDance, ProtocolCombo, 
         self.encoders = []
         self.vibl = False
         self.custom_keycodes = None
+        self.joystick = None
         self.midi = None
-
+        self.layer_alias = None
+        
         self.lighting_qmk_rgblight = self.lighting_qmk_backlight = self.lighting_vialrgb = False
 
         # underglow
@@ -148,6 +150,7 @@ class Keyboard(ProtocolMacro, ProtocolDynamic, ProtocolTapDance, ProtocolCombo, 
         if "vial" in payload:
             vial = payload["vial"]
             self.vibl = vial.get("vibl", False)
+            self.joystick = vial.get("joystick", None)
             self.midi = vial.get("midi", None)
 
         self.layout_labels = payload["layouts"].get("labels")
@@ -190,6 +193,8 @@ class Keyboard(ProtocolMacro, ProtocolDynamic, ProtocolTapDance, ProtocolCombo, 
             if key.labels[8]:
                 idx, opt = key.labels[8].split(",")
                 key.layout_index, key.layout_option = int(idx), int(opt)
+        if "layer_alias" in payload:
+            self.layer_alias = payload["layer_alias"]
 
     def reload_keymap(self):
         """ Load current key mapping from the keyboard """
